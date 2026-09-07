@@ -1,0 +1,7 @@
+{"title":"NYC Taxi Streaming","timezone":"browser","schemaVersion":39,"version":1,"panels":[
+{"type":"stat","title":"Processed Events","gridPos":{"x":0,"y":0,"w":6,"h":4},"targets":[{"expr":"taxi_events_processed_total"}]},
+{"type":"stat","title":"Failed Events","gridPos":{"x":6,"y":0,"w":6,"h":4},"targets":[{"expr":"taxi_events_failed_total"}]},
+{"type":"stat","title":"Events/sec","gridPos":{"x":12,"y":0,"w":6,"h":4},"targets":[{"expr":"taxi_events_per_second"}]},
+{"type":"timeseries","title":"Processing Latency","gridPos":{"x":0,"y":4,"w":12,"h":8},"targets":[{"expr":"rate(taxi_processing_latency_seconds_sum[1m])/rate(taxi_processing_latency_seconds_count[1m])"}]},
+{"type":"timeseries","title":"Throughput","gridPos":{"x":12,"y":4,"w":12,"h":8},"targets":[{"expr":"rate(taxi_events_processed_total[1m])"}]}
+]}
